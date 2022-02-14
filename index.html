@@ -34,11 +34,11 @@
                 <div class="formContainer">
                     <form action="">
                         <p>Hemisphere</p>
-                        <input type="radio" name="hemisphere" id="northern">
+                        <input type="radio" name="hemisphere" id="northern" value="northern">
                         <label for="northern" name="hemisphere">Northern</label>
 
-                        <input type="radio" name="hemisphere" id="southern">
-                        <label for="northern" name="hemisphere">Southern</label>
+                        <input type="radio" name="hemisphere" id="southern" value="southern">
+                        <label for="southern" name="hemisphere">Southern</label>
 
                         <p>Month</p>
                         <select name="month" id="month">
@@ -71,9 +71,12 @@
                 <label for="fish">Fish</label>
 
                 <input type="radio" name="tabs" id="seaCreatures">
-                <label for="seaCreatures">Sea creatures</label>
+                <label for="seaCreatures">Sea Creatures</label>
 
                 <div class="results">
+                    <ul class="bugsResults"></ul>
+                    <ul class="fishResults"></ul>
+                    <ul class="seaCreaturesResults"></ul>
                     <!-- content goes here -->
                 </div> <!-- end of .results -->
             </div> <!-- end of .wrapper -->
