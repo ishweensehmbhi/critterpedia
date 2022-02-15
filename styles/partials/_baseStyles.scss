@@ -20,15 +20,17 @@ p {
 
 // Base styles
 
-body {
+html {
     font-size: 125%;
+}
+
+body {
     background-color: $tertiary;
     color: $quaternary;
 }
 
 img {
     display: block;
-    width: 100%;
 }
 
 .wrapper {
@@ -45,5 +47,14 @@ img {
 
 .fa-circle-info {
     font-size: 2rem;
-    color: $secondary;
+    color: $tertiary;
+}
+
+footer {
+    background-color: $extra;
+    text-align: center;
+    padding: 2.5% 0;
+    p {
+        color: $tertiary;
+    }
 }

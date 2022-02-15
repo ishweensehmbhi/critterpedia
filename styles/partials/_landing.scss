@@ -1,0 +1,59 @@
+.landing {
+    min-height: 100vh;
+}
+
+.landingContent {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .blathersContainer {
+        margin: 0 auto;
+        padding-top: 2.5%;
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        border: 5px solid $quaternary;
+        border-radius: 10px;
+        text-align: center;
+        padding: 5%;
+        margin: 2.5% 0;
+    }
+
+    .hemisphereContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .northernContainer,
+        .southernContainer {
+            padding: 0 5%;
+        }
+    }
+    select {
+        width: 40%;
+        margin: 0 auto;
+        padding: 1.5%;
+        text-align: center;
+    }
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 2.5%;
+    margin-top: 2.5%;
+    width: 300px;
+    background-color: $primary;
+    color: $tertiary;
+    &:hover,
+    &:focus {
+        background-color: $primaryLight;
+        color: $tertiary;
+    }
+}

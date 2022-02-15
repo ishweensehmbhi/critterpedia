@@ -1,0 +1,17 @@
+header {
+    padding: 2.5% 0;
+    background-color: $extra;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .homeLink {
+        display: flex;
+        flex-direction: row;
+    }
+    .leafIcon {
+        margin-left: 2%;
+    }
+}
