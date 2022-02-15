@@ -1,0 +1,49 @@
+// Stripping styles
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+// Base styles
+
+body {
+    font-size: 125%;
+    background-color: $tertiary;
+    color: $quaternary;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.wrapper {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+// font-awesome icons
+
+.fas {
+    font-size: 2rem;
+}
+
+.fa-circle-info {
+    font-size: 2rem;
+    color: $secondary;
+}
