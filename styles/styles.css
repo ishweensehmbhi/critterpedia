@@ -491,14 +491,14 @@ button:hover, button:focus {
   margin: 2%;
 }
 .popup .popupContent a {
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 .popup .popupContent a:hover,
 .popup .popupContent a:focus {
-  opacity: 0.75;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
+  color: #972227;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 .popup .popupContent hr {
   border: 0;
@@ -511,14 +511,17 @@ button:hover, button:focus {
   position: absolute;
   right: 5%;
   top: 5%;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
 }
-.popup .closeButton:hover, .popup .closeButton:focus {
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-  opacity: 0.5;
+.popup .closeButton i {
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.popup .closeButton i:hover,
+.popup .closeButton i:focus {
+  color: #972227;
   cursor: pointer;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 
 @-webkit-keyframes popupFadeIn {

@@ -32,12 +32,12 @@
 			margin: 2%;
 		}
 		a {
-			transition: opacity 0.5s;
+			transition: color 0.5s;
 		}
 		a:hover,
 		a:focus {
-			opacity: 0.75;
-			transition: opacity 0.5s;
+			color: $celesteRed;
+			transition: color 0.5s;
 		}
 		hr {
 			border: 0;
@@ -57,12 +57,14 @@
 		position: absolute;
 		right: 5%;
 		top: 5%;
-		transition: opacity 0.5s;
-		&:hover,
-		&:focus {
-			transition: opacity 0.5s;
-			opacity: 0.5;
+		i {
+			transition: color 0.5s;
+		}
+		i:hover,
+		i:focus {
+			color: $celesteRed;
 			cursor: pointer;
+			transition: color 0.5s;
 		}
 	}
 }
