@@ -268,6 +268,33 @@ body {
 
 a {
   text-decoration: none;
+  color: #f5ccc5;
+  font-weight: bold;
+}
+
+.popup h2 {
+  text-transform: uppercase;
+}
+.popup p {
+  line-height: 30px;
+}
+.popup .creditsText {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.popup .smallModalCopy,
+.popup .creditsText,
+.popup li {
+  font-size: 0.8rem;
+  line-height: 25px;
+  color: #ccc;
+}
+.popup i {
+  color: #f5ccc5;
+}
+.popup .closeButton {
+  -webkit-transform: scale(200%);
+          transform: scale(200%);
 }
 
 * {
@@ -318,7 +345,7 @@ img {
 }
 
 footer {
-  background-color: #F5CCC5;
+  background-color: #f5ccc5;
   text-align: center;
   padding: 2.5% 0;
 }
@@ -328,7 +355,7 @@ footer p {
 
 header {
   padding: 2.5% 0;
-  background-color: #F5CCC5;
+  background-color: #f5ccc5;
 }
 
 nav {
@@ -435,27 +462,66 @@ button:hover, button:focus {
   position: fixed;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
-  padding-top: 200px;
+  padding-top: 25%;
   right: 0;
   top: 0;
   width: 100%;
-  height: 100%;
-  -webkit-animation: modalFadeIn 0.75s;
-          animation: modalFadeIn 0.75s;
+  height: 100vh;
+  -webkit-animation: popupFadeIn 0.75s;
+          animation: popupFadeIn 0.75s;
 }
-
-.popupContent {
+.popup .popupContent {
   background-color: #fffffa;
-  margin: auto;
-  padding: 30px;
-  border: 5px solid #c48d3f;
-  width: 50%;
+  margin: 0 auto;
+  padding: 5%;
+  border: 5px solid #cfaf8e;
+  width: 70%;
+  max-width: 1200px;
   text-align: center;
-  -webkit-animation: modalFadeIn 0.75s;
-          animation: modalFadeIn 0.75s;
+  -webkit-animation: popupFadeIn 0.75s;
+          animation: popupFadeIn 0.75s;
+  border-radius: 2.5%;
+  position: relative;
+}
+.popup .popupContent img {
+  width: 30%;
+  margin: 3.5% auto;
+}
+.popup .popupContent p {
+  margin: 2%;
+}
+.popup .popupContent a {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.popup .popupContent a:hover,
+.popup .popupContent a:focus {
+  opacity: 0.75;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.popup .popupContent hr {
+  border: 0;
+  height: 2px;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(245, 204, 197, 0)), color-stop(rgba(245, 204, 197, 0.75)), to(rgba(245, 204, 197, 0)));
+  background-image: linear-gradient(to right, rgba(245, 204, 197, 0), rgba(245, 204, 197, 0.75), rgba(245, 204, 197, 0));
+  margin: 5% 0;
+}
+.popup .closeButton {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.popup .closeButton:hover, .popup .closeButton:focus {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0.5;
+  cursor: pointer;
 }
 
-@-webkit-keyframes modalFadeIn {
+@-webkit-keyframes popupFadeIn {
   0% {
     opacity: 0;
   }
@@ -464,7 +530,7 @@ button:hover, button:focus {
   }
 }
 
-@keyframes modalFadeIn {
+@keyframes popupFadeIn {
   0% {
     opacity: 0;
   }

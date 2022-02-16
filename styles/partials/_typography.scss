@@ -31,4 +31,32 @@ body {
 
 a {
 	text-decoration: none;
+	color: $extra;
+	font-weight: bold;
+}
+
+.popup {
+	h2 {
+		text-transform: uppercase;
+	}
+	p {
+		line-height: 30px;
+	}
+	.creditsText {
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	.smallModalCopy,
+	.creditsText,
+	li {
+		font-size: 0.8rem;
+		line-height: 25px;
+		color: $grey;
+	}
+	i {
+		color: $extra;
+	}
+	.closeButton {
+		transform: scale(200%);
+	}
 }
