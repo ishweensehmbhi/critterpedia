@@ -26,6 +26,23 @@ app.getFormResults = () => {
 	});
 };
 
+// Listen for a click on the "info" button
+app.infoEventListener = () => {
+	const infoBtn = document.querySelector(".infoLink");
+	const popup = document.querySelector(".popup");
+	const closeBtn = document.querySelector(".closeButton");
+
+	// When info btn is clicked, show popup
+	infoBtn.addEventListener("click", function () {
+		popup.style.display = "block";
+	});
+	// When span is clicked, close popup
+
+	closeBtn.addEventListener("click", function () {
+		popup.style.display = "none";
+	});
+};
+
 // Get information from the API
 app.getData = () => {
 	// Fetch method for bugs
@@ -59,6 +76,7 @@ app.getData = () => {
 
 // Initialize app
 app.init = () => {
+	app.infoEventListener();
 	app.getFormResults();
 	// app.getData();
 };

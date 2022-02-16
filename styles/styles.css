@@ -262,6 +262,14 @@ h3 {
   padding: 2.5% 0;
 }
 
+body {
+  font-family: "Varela Round", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -419,4 +427,48 @@ button {
 button:hover, button:focus {
   background-color: #bcf8cb;
   color: #fffffa;
+}
+
+.popup {
+  background-color: #fffffa;
+  display: none;
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 200px;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: modalFadeIn 0.75s;
+          animation: modalFadeIn 0.75s;
+}
+
+.popupContent {
+  background-color: #fffffa;
+  margin: auto;
+  padding: 30px;
+  border: 5px solid #c48d3f;
+  width: 50%;
+  text-align: center;
+  -webkit-animation: modalFadeIn 0.75s;
+          animation: modalFadeIn 0.75s;
+}
+
+@-webkit-keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

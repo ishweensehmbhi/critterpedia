@@ -1,26 +1,34 @@
 h1,
 h2 {
-    font-family: $headingFont;
+	font-family: $headingFont;
 }
 
 h3,
 p,
 label {
-    font-family: $bodyFont;
-    color: $quaternaryLight;
-    font-size: $baseFontSize;
+	font-family: $bodyFont;
+	color: $quaternaryLight;
+	font-size: $baseFontSize;
 }
 
 h1 {
-    color: $tertiary;
-    font-size: 2rem;
-    span {
-        color: $primaryLight;
-    }
+	color: $tertiary;
+	font-size: 2rem;
+	span {
+		color: $primaryLight;
+	}
 }
 
 h3 {
-    font-size: 1.2rem;
-    color: $quaternary;
-    padding: 2.5% 0;
+	font-size: 1.2rem;
+	color: $quaternary;
+	padding: 2.5% 0;
+}
+
+body {
+	font-family: $bodyFont;
+}
+
+a {
+	text-decoration: none;
 }
