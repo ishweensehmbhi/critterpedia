@@ -1,0 +1,79 @@
+.popup {
+	// Page background
+	background-color: $tertiary;
+	display: none;
+	position: fixed;
+	z-index: 10;
+	background-color: rgba(black, 0.5);
+	padding-top: 100px;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	animation: popupFadeIn 0.75s;
+
+	// Style the content inside the pop up modal
+	.popupContent {
+		background-color: $tertiary;
+		margin: 0 auto;
+		padding: 5%;
+		border: 5px solid $quaternaryLight;
+		width: 70%;
+		max-width: 1200px;
+		text-align: center;
+		animation: popupFadeIn 0.75s;
+		border-radius: 2.5%;
+		position: relative;
+		img {
+			width: 30%;
+			margin: 3.5% auto;
+		}
+		p {
+			margin: 2%;
+		}
+		a {
+			transition: color 0.5s;
+		}
+		a:hover,
+		a:focus {
+			color: $celesteRed;
+			transition: color 0.5s;
+		}
+		hr {
+			border: 0;
+			height: 2px;
+			background-image: linear-gradient(
+				to right,
+				rgba($extra, 0),
+				rgba($extra, 0.75),
+				rgba($extra, 0)
+			);
+			margin: 5% 0;
+		}
+	}
+
+	// Style the close button
+	.closeButton {
+		position: absolute;
+		right: 5%;
+		top: 5%;
+		i {
+			transition: color 0.5s;
+		}
+		i:hover,
+		i:focus {
+			color: $celesteRed;
+			cursor: pointer;
+			transition: color 0.5s;
+		}
+	}
+}
+
+@keyframes popupFadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

@@ -78,26 +78,38 @@
 
         <section class="info">
             <div class="wrapper">
+                <!-- toggle tab one  -->
                 <input type="radio" name="tabs" id="bugs">
-                <label for="bugs">Bugs</label>
+                <label for="bugs"><i class="fa-solid fa-bug" aria-hidden="true"></i>
+                    <span class="sr-only">View Bugs</span>
+                </label>
 
+                <!-- toggle tab two  -->
                 <input type="radio" name="tabs" id="fish">
-                <label for="fish">Fish</label>
+                <label for="fish"><i class="fa-solid fa-fish" aria-hidden="true"></i>
+                    <span class="sr-only">View Fish</span></label>
 
+                <!-- toggle tab three  -->
                 <input type="radio" name="tabs" id="seaCreatures">
-                <label for="seaCreatures">Sea Creatures</label>
+                <label for="seaCreatures"><i class="fa-brands fa-octopus-deploy" aria-hidden="true"></i>
+                    <span class="sr-only">View Fish</span></label>
 
                 <div class="results">
-                    <ul class="bugsResults"></ul>
-                    <ul class="fishResults"></ul>
-                    <ul class="seaCreaturesResults"></ul>
+                    <div class="bugsResults">
+                        <ul class="bugResultList"></ul>
+                    </div>
+                    <div class="fishResults">
+                        <ul class="fishResultList"></ul>
+                    </div>
+                    <div class="seaCreatureResults">
+                        <ul class="seaCreatureResultList"></ul>
+                    </div>
                     <!-- content goes here -->
                 </div> <!-- end of .results -->
             </div> <!-- end of .wrapper -->
-
         </section>
 
-        <div class="popup" id="popup" role="dialog">
+        <div class="popup" id="popup">
             <div class="popupContent">
                 <h2 class="popupHeading">Hoo hoot!</h2>
                 <a href="#" class="closeButton"><i class="fa-solid fa-circle-xmark" aria-label="modal exit"></i></a>

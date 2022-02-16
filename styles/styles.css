@@ -541,3 +541,79 @@ button:hover, button:focus {
     opacity: 1;
   }
 }
+.popup {
+  background-color: #fffffa;
+  display: none;
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 100px;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  -webkit-animation: popupFadeIn 0.75s;
+          animation: popupFadeIn 0.75s;
+}
+.popup .popupContent {
+  background-color: #fffffa;
+  margin: 0 auto;
+  padding: 5%;
+  border: 5px solid #cfaf8e;
+  width: 70%;
+  max-width: 1200px;
+  text-align: center;
+  -webkit-animation: popupFadeIn 0.75s;
+          animation: popupFadeIn 0.75s;
+  border-radius: 2.5%;
+  position: relative;
+}
+.popup .popupContent img {
+  width: 30%;
+  margin: 3.5% auto;
+}
+.popup .popupContent p {
+  margin: 2%;
+}
+.popup .popupContent a {
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.popup .popupContent a:hover,
+.popup .popupContent a:focus {
+  color: #972227;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.popup .popupContent hr {
+  border: 0;
+  height: 2px;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(245, 204, 197, 0)), color-stop(rgba(245, 204, 197, 0.75)), to(rgba(245, 204, 197, 0)));
+  background-image: linear-gradient(to right, rgba(245, 204, 197, 0), rgba(245, 204, 197, 0.75), rgba(245, 204, 197, 0));
+  margin: 5% 0;
+}
+.popup .closeButton {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+.popup .closeButton i {
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.popup .closeButton i:hover,
+.popup .closeButton i:focus {
+  color: #972227;
+  cursor: pointer;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+@keyframes popupFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
