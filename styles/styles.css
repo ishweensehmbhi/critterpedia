@@ -348,10 +348,6 @@ nav .leafIcon {
   margin-left: 2%;
 }
 
-.landing {
-  min-height: 100vh;
-}
-
 .landingContent {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -378,6 +374,9 @@ nav .leafIcon {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border: 5px solid #c48d3f;
   border-radius: 10px;
   text-align: center;
@@ -410,7 +409,7 @@ nav .leafIcon {
 button {
   border: none;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 30px auto 30px;
   padding: 2.5%;
   margin-top: 2.5%;
   width: 300px;
