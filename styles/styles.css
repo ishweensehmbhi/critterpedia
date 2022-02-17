@@ -523,26 +523,22 @@ button:hover, button:focus {
 
 .tabs {
   padding: 3% 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 .tabs label {
+  text-align: center;
   display: inline-block;
   letter-spacing: 0.5px;
-  padding: 1% 1%;
-  margin: 0% 5%;
+  padding: 2% 2%;
+  margin-left: 4.5%;
   color: #c48d3f;
   background-color: #f5ccc5;
   border-radius: 50%;
-  -webkit-transform: scale(200%);
-          transform: scale(200%);
   color: white;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
+}
+.tabs label i {
+  font-size: 1.6rem;
 }
 .tabs label:hover, .tabs label:focus {
   -webkit-transition: background-color 0.5s;
@@ -562,6 +558,9 @@ button:hover, button:focus {
   background-color: #972227;
 }
 
+.results > div {
+  display: none;
+}
 .results ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -603,6 +602,12 @@ button:hover, button:focus {
 }
 .results ul .itemCard .itemProperty {
   margin-bottom: 5%;
+}
+
+#bugTab:checked ~ .results .bugsResults,
+#fishTab:checked ~ .results .fishResults,
+#seaCreatureTab:checked ~ .results .seaCreatureResults {
+  display: block;
 }
 
 .popup {

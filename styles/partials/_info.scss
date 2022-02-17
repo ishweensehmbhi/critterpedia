@@ -5,20 +5,23 @@
 .tabs {
 	// Flex the buttons inside the tabs container
 	padding: 3% 0;
-	display: flex;
-	justify-content: center;
+
 	// Style labels
 	label {
+		text-align: center;
 		display: inline-block;
 		letter-spacing: 0.5px;
-		padding: 1% 1%;
-		margin: 0% 5%;
+		padding: 2% 2%;
+		margin-left: 4.5%;
 		color: $quaternary;
 		background-color: $extra;
 		border-radius: 50%;
-		transform: scale(200%);
 		color: white;
 		transition: background-color 0.5s;
+
+		i {
+			font-size: 1.6rem;
+		}
 		// Styling for when label is selected
 		&:hover,
 		&:focus {
@@ -43,6 +46,10 @@
 
 // Style the results divs and the individual item cards inside
 .results {
+	// hide divs following .results
+	& > div {
+		display: none;
+	}
 	ul {
 		display: flex;
 		flex-direction: row;
@@ -67,4 +74,11 @@
 			}
 		}
 	}
+}
+
+// display corresponding div when label is checked
+#bugTab:checked ~ .results .bugsResults,
+#fishTab:checked ~ .results .fishResults,
+#seaCreatureTab:checked ~ .results .seaCreatureResults {
+	display: block;
 }
