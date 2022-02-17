@@ -35,6 +35,31 @@ a {
 	font-weight: bold;
 }
 
+.results {
+	h3 {
+		font-family: $headingFont;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+	}
+	p {
+		font-family: $bodyFont;
+		line-height: 30px;
+		font-size: 1rem;
+	}
+	h3,
+	p {
+		color: $celesteRed;
+	}
+	.itemSubheading {
+		font-weight: bold;
+		font-family: $headingFont;
+	}
+	.itemProperty,
+	.itemSubheading {
+		text-transform: lowercase;
+	}
+}
+
 .popup {
 	h2 {
 		text-transform: uppercase;
