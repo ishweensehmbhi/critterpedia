@@ -12,12 +12,16 @@
 		display: inline-block;
 		letter-spacing: 0.5px;
 		padding: 1% 1%;
-		margin: 0% auto;
+		margin-left: 4.5%;
 		color: $quaternary;
 		background-color: $extra;
 		border-radius: 50%;
 		color: white;
 		transition: background-color 0.5s;
+
+		i {
+			font-size: 1.6rem;
+		}
 		// Styling for when label is selected
 		&:hover,
 		&:focus {
@@ -42,6 +46,7 @@
 
 // Style the results divs and the individual item cards inside
 .results {
+	// hide divs following .results
 	& > div {
 		display: none;
 	}
@@ -71,6 +76,7 @@
 	}
 }
 
+// display corresponding div when label is checked
 #bugTab:checked ~ .results .bugsResults,
 #fishTab:checked ~ .results .fishResults,
 #seaCreatureTab:checked ~ .results .seaCreatureResults {

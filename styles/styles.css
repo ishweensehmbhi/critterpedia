@@ -529,13 +529,16 @@ button:hover, button:focus {
   display: inline-block;
   letter-spacing: 0.5px;
   padding: 1% 1%;
-  margin: 0% auto;
+  margin-left: 4.5%;
   color: #c48d3f;
   background-color: #f5ccc5;
   border-radius: 50%;
   color: white;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
+}
+.tabs label i {
+  font-size: 1.6rem;
 }
 .tabs label:hover, .tabs label:focus {
   -webkit-transition: background-color 0.5s;
