@@ -456,6 +456,72 @@ button:hover, button:focus {
   color: #fffffa;
 }
 
+.tabs {
+  padding: 3% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.tabs label {
+  display: inline-block;
+  letter-spacing: 0.5px;
+  padding: 2% 4%;
+  margin: 0% 2%;
+  color: #c48d3f;
+  background-color: #f5ccc5;
+  border-radius: 10%;
+}
+.tabs label:hover, .tabs label:focus {
+  color: white;
+  cursor: pointer;
+}
+.tabs input[type=radio] {
+  opacity: 0;
+  position: absolute;
+}
+.tabs input[type=radio]:checked + label {
+  color: white;
+}
+
+.results ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.results ul .itemCard {
+  width: calc(25% - 2%);
+  margin: 2% 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border: 2px solid #c48d3f;
+  border-radius: 5%;
+  padding: 3.5% 2%;
+}
+.results ul h3 {
+  font-family: "Open Sans", sans-serif;
+}
+
 .popup {
   background-color: #fffffa;
   display: none;
@@ -531,82 +597,6 @@ button:hover, button:focus {
   100% {
     opacity: 1;
   }
-}
-
-@keyframes popupFadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.popup {
-  background-color: #fffffa;
-  display: none;
-  position: fixed;
-  z-index: 10;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding-top: 100px;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  -webkit-animation: popupFadeIn 0.75s;
-          animation: popupFadeIn 0.75s;
-}
-.popup .popupContent {
-  background-color: #fffffa;
-  margin: 0 auto;
-  padding: 5%;
-  border: 5px solid #cfaf8e;
-  width: 70%;
-  max-width: 1200px;
-  text-align: center;
-  -webkit-animation: popupFadeIn 0.75s;
-          animation: popupFadeIn 0.75s;
-  border-radius: 2.5%;
-  position: relative;
-}
-.popup .popupContent img {
-  width: 30%;
-  margin: 3.5% auto;
-}
-.popup .popupContent p {
-  margin: 2%;
-}
-.popup .popupContent a {
-  -webkit-transition: color 0.5s;
-  transition: color 0.5s;
-}
-.popup .popupContent a:hover,
-.popup .popupContent a:focus {
-  color: #972227;
-  -webkit-transition: color 0.5s;
-  transition: color 0.5s;
-}
-.popup .popupContent hr {
-  border: 0;
-  height: 2px;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(245, 204, 197, 0)), color-stop(rgba(245, 204, 197, 0.75)), to(rgba(245, 204, 197, 0)));
-  background-image: linear-gradient(to right, rgba(245, 204, 197, 0), rgba(245, 204, 197, 0.75), rgba(245, 204, 197, 0));
-  margin: 5% 0;
-}
-.popup .closeButton {
-  position: absolute;
-  right: 5%;
-  top: 5%;
-}
-.popup .closeButton i {
-  -webkit-transition: color 0.5s;
-  transition: color 0.5s;
-}
-.popup .closeButton i:hover,
-.popup .closeButton i:focus {
-  color: #972227;
-  cursor: pointer;
-  -webkit-transition: color 0.5s;
-  transition: color 0.5s;
 }
 
 @keyframes popupFadeIn {

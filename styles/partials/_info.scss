@@ -1,79 +1,55 @@
-.popup {
-	// Page background
-	background-color: $tertiary;
-	display: none;
-	position: fixed;
-	z-index: 10;
-	background-color: rgba(black, 0.5);
-	padding-top: 100px;
-	right: 0;
-	top: 0;
-	width: 100%;
-	height: 100vh;
-	animation: popupFadeIn 0.75s;
-
-	// Style the content inside the pop up modal
-	.popupContent {
-		background-color: $tertiary;
-		margin: 0 auto;
-		padding: 5%;
-		border: 5px solid $quaternaryLight;
-		width: 70%;
-		max-width: 1200px;
-		text-align: center;
-		animation: popupFadeIn 0.75s;
-		border-radius: 2.5%;
-		position: relative;
-		img {
-			width: 30%;
-			margin: 3.5% auto;
-		}
-		p {
-			margin: 2%;
-		}
-		a {
-			transition: color 0.5s;
-		}
-		a:hover,
-		a:focus {
-			color: $celesteRed;
-			transition: color 0.5s;
-		}
-		hr {
-			border: 0;
-			height: 2px;
-			background-image: linear-gradient(
-				to right,
-				rgba($extra, 0),
-				rgba($extra, 0.75),
-				rgba($extra, 0)
-			);
-			margin: 5% 0;
+.tabs {
+	padding: 3% 0;
+	display: flex;
+	justify-content: center;
+	// Style labels
+	label {
+		display: inline-block;
+		letter-spacing: 0.5px;
+		padding: 2% 4%;
+		margin: 0% 2%;
+		color: $quaternary;
+		background-color: $extra;
+		border-radius: 10%;
+		&:hover,
+		&:focus {
+			color: white;
+			cursor: pointer;
 		}
 	}
 
-	// Style the close button
-	.closeButton {
+	// input[type="radio"]:checked + label {
+	// }
+
+	// Hided radio buttons
+	input[type="radio"] {
+		opacity: 0;
 		position: absolute;
-		right: 5%;
-		top: 5%;
-		i {
-			transition: color 0.5s;
-		}
-		i:hover,
-		i:focus {
-			color: $celesteRed;
-			cursor: pointer;
-			transition: color 0.5s;
+		&:checked + label {
+			color: white;
 		}
 	}
 }
 
-@keyframes popupFadeIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
+.results {
+	ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		.itemCard {
+			width: calc(25% - 2%);
+			margin: 2% 2%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			border: 2px solid $quaternary;
+			border-radius: 5%;
+			padding: 3.5% 2%;
+		}
+		h3 {
+			font-family: $headingFont;
+		}
 	}
 }
