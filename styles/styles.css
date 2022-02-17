@@ -618,6 +618,7 @@ button:hover, button:focus {
   height: 100vh;
   -webkit-animation: popupFadeIn 0.75s;
           animation: popupFadeIn 0.75s;
+  overflow-y: scroll;
 }
 .popup .popupContent {
   background-color: #fffffa;
