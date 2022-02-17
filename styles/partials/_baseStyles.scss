@@ -47,13 +47,6 @@ img {
 
 .fa-circle-info {
 	font-size: 2rem;
-	color: $tertiary;
-	transition: color 0.6s;
-	&:hover,
-	&:focus {
-		color: $celesteRed;
-		transition: color 0.6s;
-	}
 }
 
 footer {
