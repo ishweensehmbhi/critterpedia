@@ -1,32 +1,25 @@
 header {
-    padding: 2.5% 0;
-    background-color: $extra;
+	padding: 2.5% 0;
+	background-color: $extra;
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    .homeLink {
-        display: flex;
-        flex-direction: row;
-    }
-    .leafIcon {
-        margin-left: 2%;
-    }
-    .infoLink {
-        transition: 0.5s;
-        &:hover,
-        &:focus {
-            opacity: 60%;
-        }
-    }
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	.homeLink {
+		display: flex;
+		flex-direction: row;
+	}
+	.leafIcon {
+		margin-left: 2%;
+	}
 }
 h1 {
-    display: flex;
-    transition: transform 0.3s;
-    &:hover,
-    &:focus {
-        transform: scale(1.1);
-    }
+	display: flex;
+	transition: transform 0.3s;
+	&:hover,
+	&:focus {
+		transform: scale(1.1);
+	}
 }

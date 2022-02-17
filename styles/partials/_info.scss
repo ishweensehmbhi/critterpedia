@@ -1,5 +1,9 @@
 .info {
 	margin-bottom: 100px;
+	.wrapper {
+		max-width: 1400px;
+		width: 100%;
+	}
 }
 
 .tabs {
@@ -56,8 +60,8 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		.itemCard {
-			width: calc(30% - 1.5%);
-			margin: 1.5% 1.5%;
+			width: calc(32% - 0.5%);
+			margin: 1.5% 0.5%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -65,7 +69,7 @@
 			justify-content: space-between;
 			border: 5px solid $extra;
 			border-radius: 5%;
-			padding: 10% 2%;
+			padding: 4% 2%;
 			img {
 				filter: drop-shadow(5px 5px 5px $grey);
 			}

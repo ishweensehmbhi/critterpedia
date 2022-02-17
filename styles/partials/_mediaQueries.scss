@@ -1,10 +1,11 @@
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
 	.tabs {
 		justify-content: space-evenly;
 		margin: 5%;
 	}
 	.results ul .itemCard {
-		width: calc(40% - 2%);
+		width: calc(46% - 0.5%);
+		margin: 1.5% 1.5%;
 	}
 }
 
@@ -18,11 +19,9 @@
 			width: 70%;
 		}
 	}
-}
 
-@media (max-width: 600px) {
 	.results ul .itemCard {
-		width: calc(70% - 2%);
+		width: calc(46% - 2%);
 	}
 }
 
