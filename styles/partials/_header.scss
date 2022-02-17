@@ -14,4 +14,19 @@ nav {
     .leafIcon {
         margin-left: 2%;
     }
+    .infoLink {
+        transition: 0.5s;
+        &:hover,
+        &:focus {
+            opacity: 60%;
+        }
+    }
+}
+h1 {
+    display: flex;
+    transition: transform 0.3s;
+    &:hover,
+    &:focus {
+        transform: scale(1.1);
+    }
 }

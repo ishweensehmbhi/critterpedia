@@ -15,6 +15,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-self: center;
+		width: 70%;
 		border: 5px solid $quaternary;
 		border-radius: 10px;
 		text-align: center;
@@ -29,28 +31,41 @@
 		.northernContainer,
 		.southernContainer {
 			padding: 0 5%;
+			margin: 2.5% 0;
 		}
 	}
 	select {
-		width: 40%;
-		margin: 0 auto;
-		padding: 1.5%;
+		width: 35%;
+		margin: 2.5% auto;
+		padding: 2.5%;
 		text-align: center;
+		border-radius: 10px;
+		border: 2px solid $tertiary;
+		cursor: pointer;
+		background-color: $blathersBrown;
+		transition: background-color 0.5s;
+		color: $tertiary;
+		&:hover,
+		&:focus {
+			background-color: $quaternaryLight;
+			border: 2px solid $quaternary;
+		}
 	}
 }
 
 button {
 	border: none;
 	border-radius: 10px;
-	margin: 30px auto 30px;
+	margin: 2.5% auto;
 	padding: 2.5%;
 	margin-top: 2.5%;
-	width: 300px;
-	background-color: $primary;
+	width: 55%;
+	background-color: $extra;
 	color: $tertiary;
+	transition: background-color 0.5s;
+	cursor: pointer;
 	&:hover,
 	&:focus {
-		background-color: $primaryLight;
-		color: $tertiary;
+		background-color: $celesteRed;
 	}
 }

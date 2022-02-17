@@ -405,6 +405,27 @@ nav .homeLink {
 nav .leafIcon {
   margin-left: 2%;
 }
+nav .infoLink {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+nav .infoLink:hover, nav .infoLink:focus {
+  opacity: 60%;
+}
+
+h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+h1:hover, h1:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
 
 .landingContent {
   display: -webkit-box;
@@ -435,6 +456,9 @@ nav .leafIcon {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 70%;
   border: 5px solid #c48d3f;
   border-radius: 10px;
   text-align: center;
@@ -456,27 +480,41 @@ nav .leafIcon {
 .landingContent .hemisphereContainer .northernContainer,
 .landingContent .hemisphereContainer .southernContainer {
   padding: 0 5%;
+  margin: 2.5% 0;
 }
 .landingContent select {
-  width: 40%;
-  margin: 0 auto;
-  padding: 1.5%;
+  width: 35%;
+  margin: 2.5% auto;
+  padding: 2.5%;
   text-align: center;
+  border-radius: 10px;
+  border: 2px solid #fffffa;
+  cursor: pointer;
+  background-color: #6e5f47;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  color: #fffffa;
+}
+.landingContent select:hover, .landingContent select:focus {
+  background-color: #cfaf8e;
+  border: 2px solid #c48d3f;
 }
 
 button {
   border: none;
   border-radius: 10px;
-  margin: 30px auto 30px;
+  margin: 2.5% auto;
   padding: 2.5%;
   margin-top: 2.5%;
-  width: 300px;
-  background-color: #9dffb0;
+  width: 55%;
+  background-color: #f5ccc5;
   color: #fffffa;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  cursor: pointer;
 }
 button:hover, button:focus {
-  background-color: #bcf8cb;
-  color: #fffffa;
+  background-color: #972227;
 }
 
 .info {
@@ -664,8 +702,42 @@ button:hover, button:focus {
     width: calc(40% - 2%);
   }
 }
+@media (max-width: 800px) {
+  .landingContent form {
+    width: 90%;
+  }
+  .landingContent select,
+.landingContent button {
+    width: 70%;
+  }
+}
 @media (max-width: 600px) {
   .results ul .itemCard {
     width: calc(70% - 2%);
+  }
+}
+@media (max-width: 450px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h1:hover, h1:focus {
+    -webkit-transform: none;
+            transform: none;
+    opacity: 75%;
+  }
+
+  .wrapper {
+    width: 95%;
+  }
+}
+@media (max-width: 380px) {
+  .landingContent form {
+    width: 100%;
+  }
+  .landingContent .hemisphereContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }

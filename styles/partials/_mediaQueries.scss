@@ -8,8 +8,45 @@
 	}
 }
 
+@media (max-width: 800px) {
+	.landingContent {
+		form {
+			width: 90%;
+		}
+		select,
+		button {
+			width: 70%;
+		}
+	}
+}
+
 @media (max-width: 600px) {
 	.results ul .itemCard {
 		width: calc(70% - 2%);
+	}
+}
+
+@media (max-width: 450px) {
+	h1 {
+		font-size: 1.6rem;
+		&:hover,
+		&:focus {
+			transform: none;
+			opacity: 75%;
+		}
+	}
+	.wrapper {
+		width: 95%;
+	}
+}
+
+@media (max-width: 380px) {
+	.landingContent {
+		form {
+			width: 100%;
+		}
+		.hemisphereContainer {
+			flex-direction: column;
+		}
 	}
 }
