@@ -8,7 +8,8 @@
 .tabs {
 	// Flex the buttons inside the tabs container
 	padding: 1.5% 0;
-	display: flex;
+	display: none;
+	// Change to flex when form is submitted
 	flex-direction: row;
 	justify-content: center;
 	a {
@@ -21,7 +22,8 @@
 		transition: background-color 0.5s;
 		// Styling for when label is selected
 		&:hover,
-		&:focus {
+		&:focus,
+		&:active {
 			transition: background-color 0.5s;
 			background-color: $celesteRed;
 			cursor: pointer;

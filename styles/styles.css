@@ -490,69 +490,6 @@ button:hover, button:focus {
   background-color: #972227;
 }
 
-.info {
-  margin-bottom: 5%;
-}
-.info .wrapper {
-  max-width: 1400px;
-}
-
-.tabs {
-  padding: 1.5% 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.tabs a {
-  padding: 2% 2%;
-  margin: 0% 5%;
-  color: #c48d3f;
-  background-color: #f5ccc5;
-  border-radius: 50%;
-  color: white;
-  transition: background-color 0.5s;
-}
-.tabs a:hover, .tabs a:focus {
-  transition: background-color 0.5s;
-  background-color: #972227;
-  cursor: pointer;
-}
-.tabs a i {
-  font-size: 2.5rem;
-}
-
-.results > div {
-  display: none;
-}
-.results ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-.results ul .itemCard {
-  width: calc((100% / 3) - 1.5%);
-  margin: 1.5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
-  border: 5px solid #f5ccc5;
-  border-radius: 5%;
-  padding: 4% 2%;
-}
-.results ul .itemCard img {
-  filter: drop-shadow(5px 5px 5px #ccc);
-}
-.results ul .itemCard .itemProperty {
-  margin-bottom: 5%;
-}
-
-div.activeResultsTab {
-  display: block;
-}
-
 .popup {
   background-color: #fffffa;
   display: none;
@@ -633,6 +570,69 @@ div.activeResultsTab {
     opacity: 1;
   }
 }
+.info {
+  margin-bottom: 5%;
+}
+.info .wrapper {
+  max-width: 1400px;
+}
+
+.tabs {
+  padding: 1.5% 0;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+}
+.tabs a {
+  padding: 2% 2%;
+  margin: 0% 5%;
+  color: #c48d3f;
+  background-color: #f5ccc5;
+  border-radius: 50%;
+  color: white;
+  transition: background-color 0.5s;
+}
+.tabs a:hover, .tabs a:focus, .tabs a:active {
+  transition: background-color 0.5s;
+  background-color: #972227;
+  cursor: pointer;
+}
+.tabs a i {
+  font-size: 2.5rem;
+}
+
+.results > div {
+  display: none;
+}
+.results ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.results ul .itemCard {
+  width: calc((100% / 3) - 1.5%);
+  margin: 1.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  border: 5px solid #f5ccc5;
+  border-radius: 5%;
+  padding: 4% 2%;
+}
+.results ul .itemCard img {
+  filter: drop-shadow(5px 5px 5px #ccc);
+}
+.results ul .itemCard .itemProperty {
+  margin-bottom: 5%;
+}
+
+div.activeResultsTab {
+  display: block;
+}
+
 @media (min-width: 1101px) {
   .results ul .itemCard {
     margin: 0.5% 0;
