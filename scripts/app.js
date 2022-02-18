@@ -134,20 +134,48 @@ app.getData = (hemisphere, month) => {
 					`month-array-${hemisphere}`
 				].includes(month) == true
 		);
-
-		// Now we have 3 arrays with matched creatures
-		// Get all of the bug info
-		/*const bugName = bug.name["name-USen"];
-			const bugFact = bug["museum-phrase"];
-			const bugIcon = bug["icon_uri"];
-			const bugLocation = bug.availability.location;
-			const bugRarity = bug.availability.rarity;*/
-		// Use this bug info to build an li element
-		// Append the li element to the respective results div
+		console.log(matchedSeaCreatureArray)
+		console.log(matchedBugsArray)
+		app.displayInfo(matchedBugsArray, 'bugs');
+		app.displayInfo(matchedFishArray, 'fish');
+		app.displayInfo(matchedSeaCreatureArray, 'seaCreature');
 	});
-
 	const bugsResults = document.querySelector(".bugsResults");
 	bugsResults.classList.add("activeResultsTab");
+};
+
+// display specified info from each filtered creature array
+app.displayInfo = (matchedArray, critterType) => {
+	const ulElement = document.querySelector(`.${critterType}ResultList`)
+	matchedArray.forEach((critter) => {
+		const critterName = critter.name['name-USen']
+		const critterIcon = critter['image_uri']
+		const critterFact = critter['museum-phrase']
+		if (critterType == 'bugs' || critterType == 'fish') {
+			const primaryAttribute = "location"
+			const primaryValue = critter.availability.location
+			const secondaryAttribute = "rarity"
+			const secondaryValue = critter.availability.rarity
+		} else {
+			const primaryAttribute = "speed"
+			const primaryValue = critter.speed
+			const secondaryAttribute = "shadow"
+			const secondaryValue = critter.shadow
+		}
+
+		// create html elements to add to page
+		const newCritter = document.createElement('li')
+		newCritter.classList.add('itemCard')
+		newCritter.innerHTML = `
+			<h3>${critterName}</h3>
+			<img src="${critterIcon} alt="animated icon of ${critterName}"></img>
+			<p class="itemSubheading">${primaryAttribute}</p>
+			<p class="itemProperty">${primaryValue}</p>
+			<p class="itemSubheading">${secondaryAttribute}</p>
+			<p class="itemProperty">${secondaryValue}</p>
+		`
+		ulElement.appendChild(newCritter)
+	});
 };
 
 // Initialize app
