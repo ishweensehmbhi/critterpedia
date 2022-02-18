@@ -4,8 +4,7 @@
 		margin: 5%;
 	}
 	.results ul .itemCard {
-		width: calc(46% - 0.5%);
-		margin: 1.5% 1.5%;
+		width: calc((100% / 2) - 1.5%);
 	}
 }
 
@@ -20,8 +19,17 @@
 		}
 	}
 
-	.results ul .itemCard {
-		width: calc(46% - 2%);
+	.info .wrapper {
+		width: 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	.results ul {
+		justify-content: center;
+		.itemCard {
+			width: 80%;
+		}
 	}
 }
 
@@ -36,6 +44,9 @@
 	}
 	.wrapper {
 		width: 95%;
+	}
+	.results ul .itemCard {
+		width: 100%;
 	}
 }
 

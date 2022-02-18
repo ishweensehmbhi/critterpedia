@@ -294,6 +294,9 @@ a {
 .results .itemSubheading {
   text-transform: lowercase;
 }
+.results .quote {
+  font-family: "Varela Round", sans-serif;
+}
 
 .popup h2 {
   text-transform: uppercase;
@@ -520,11 +523,10 @@ button:hover, button:focus {
 }
 
 .info {
-  margin-bottom: 100px;
+  margin-bottom: 5%;
 }
 .info .wrapper {
   max-width: 1400px;
-  width: 100%;
 }
 
 .tabs {
@@ -577,13 +579,13 @@ button:hover, button:focus {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .results ul .itemCard {
-  width: calc(32% - 0.5%);
-  margin: 1.5% 0.5%;
+  width: calc((100% / 3) - 1.5%);
+  margin: 1.5% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -710,8 +712,7 @@ button:hover, button:focus {
   }
 
   .results ul .itemCard {
-    width: calc(46% - 0.5%);
-    margin: 1.5% 1.5%;
+    width: calc((100% / 2) - 1.5%);
   }
 }
 @media (max-width: 800px) {
@@ -723,8 +724,18 @@ button:hover, button:focus {
     width: 70%;
   }
 
+  .info .wrapper {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .results ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .results ul .itemCard {
-    width: calc(46% - 2%);
+    width: 80%;
   }
 }
 @media (max-width: 450px) {
@@ -739,6 +750,10 @@ button:hover, button:focus {
 
   .wrapper {
     width: 95%;
+  }
+
+  .results ul .itemCard {
+    width: 100%;
   }
 }
 @media (max-width: 380px) {
