@@ -82,7 +82,6 @@ app.resultsEventListener = () => {
 
 // Get information from the API based on user responses
 app.getData = (hemisphere, month) => {
-	console.log(hemisphere, month);
 	// Create an array of endpoints
 	const endpointValues = ["bugs/", "fish/", "sea/"];
 
@@ -118,6 +117,25 @@ app.getData = (hemisphere, month) => {
 				) == true
 		);
 
+		// Check if specified month exists in respective hemisphere array
+		const matchedFishArray = fishArray.filter(
+			(fish) =>
+				// check if corresponding hemisphere availability array includes chosen month
+				fish.availability[`month-array-${hemisphere}`].includes(
+					month
+				) == true
+		);
+
+		// Check if specified month exists in respective hemisphere array
+		const matchedSeaCreatureArray = seaCreatureArray.filter(
+			(seaCreature) =>
+				// check if corresponding hemisphere availability array includes chosen month
+				seaCreature.availability[
+					`month-array-${hemisphere}`
+				].includes(month) == true
+		);
+
+		// Now we have 3 arrays with matched creatures
 		// Get all of the bug info
 		/*const bugName = bug.name["name-USen"];
 			const bugFact = bug["museum-phrase"];
