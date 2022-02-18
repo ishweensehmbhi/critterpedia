@@ -82,6 +82,11 @@ app.resultsEventListener = () => {
 
 // Get information from the API based on user responses
 app.getData = (hemisphere, month) => {
+	// Clear previous results
+	document.querySelector(`.bugsResultList`).innerHTML = "";
+	document.querySelector(`.fishResultList`).innerHTML = "";
+	document.querySelector(`.seaCreatureResultList`).innerHTML = "";
+
 	// Create an array of endpoints
 	const endpointValues = ["bugs/", "fish/", "sea/"];
 
@@ -134,11 +139,11 @@ app.getData = (hemisphere, month) => {
 					`month-array-${hemisphere}`
 				].includes(month) == true
 		);
-		console.log(matchedSeaCreatureArray)
-		console.log(matchedBugsArray)
-		app.displayInfo(matchedBugsArray, 'bugs');
-		app.displayInfo(matchedFishArray, 'fish');
-		app.displayInfo(matchedSeaCreatureArray, 'seaCreature');
+		console.log(matchedSeaCreatureArray);
+		console.log(matchedBugsArray);
+		app.displayInfo(matchedBugsArray, "bugs");
+		app.displayInfo(matchedFishArray, "fish");
+		app.displayInfo(matchedSeaCreatureArray, "seaCreature");
 	});
 	const bugsResults = document.querySelector(".bugsResults");
 	bugsResults.classList.add("activeResultsTab");
@@ -146,35 +151,39 @@ app.getData = (hemisphere, month) => {
 
 // display specified info from each filtered creature array
 app.displayInfo = (matchedArray, critterType) => {
-	const ulElement = document.querySelector(`.${critterType}ResultList`)
+	const ulElement = document.querySelector(`.${critterType}ResultList`);
 	matchedArray.forEach((critter) => {
-		const critterName = critter.name['name-USen']
-		const critterIcon = critter['image_uri']
-		const critterFact = critter['museum-phrase']
-		if (critterType == 'bugs' || critterType == 'fish') {
-			const primaryAttribute = "location"
-			const primaryValue = critter.availability.location
-			const secondaryAttribute = "rarity"
-			const secondaryValue = critter.availability.rarity
+		const critterName = critter.name["name-USen"];
+		const critterIcon = critter["icon_uri"];
+		const critterFact = critter["museum-phrase"];
+		let primaryAttribute = "";
+		let primaryValue = "";
+		let secondaryAttribute = "";
+		let secondaryValue = "";
+		if (critterType == "bugs" || critterType == "fish") {
+			primaryAttribute = "location";
+			primaryValue = critter.availability.location;
+			secondaryAttribute = "rarity";
+			secondaryValue = critter.availability.rarity;
 		} else {
-			const primaryAttribute = "speed"
-			const primaryValue = critter.speed
-			const secondaryAttribute = "shadow"
-			const secondaryValue = critter.shadow
+			primaryAttribute = "speed";
+			primaryValue = critter.speed;
+			secondaryAttribute = "shadow";
+			secondaryValue = critter.shadow;
 		}
 
 		// create html elements to add to page
-		const newCritter = document.createElement('li')
-		newCritter.classList.add('itemCard')
+		const newCritter = document.createElement("li");
+		newCritter.classList.add("itemCard");
 		newCritter.innerHTML = `
 			<h3>${critterName}</h3>
-			<img src="${critterIcon} alt="animated icon of ${critterName}"></img>
+			<img src="${critterIcon}" alt="animated icon of ${critterName}"></img>
 			<p class="itemSubheading">${primaryAttribute}</p>
 			<p class="itemProperty">${primaryValue}</p>
 			<p class="itemSubheading">${secondaryAttribute}</p>
 			<p class="itemProperty">${secondaryValue}</p>
-		`
-		ulElement.appendChild(newCritter)
+		`;
+		ulElement.appendChild(newCritter);
 	});
 };
 
