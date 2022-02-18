@@ -579,9 +579,9 @@ button:hover, button:focus {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 .results ul .itemCard {
   width: calc((100% / 3) - 1.5%);
@@ -711,6 +711,11 @@ button:hover, button:focus {
     margin: 5%;
   }
 
+  .results ul {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   .results ul .itemCard {
     width: calc((100% / 2) - 1.5%);
   }
