@@ -703,6 +703,11 @@ button:hover, button:focus {
     opacity: 1;
   }
 }
+@media (min-width: 1101px) {
+  .results ul .itemCard {
+    margin: 0.5% 0;
+  }
+}
 @media (max-width: 1100px) {
   .tabs {
     -webkit-box-pack: space-evenly;
