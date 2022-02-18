@@ -43,42 +43,78 @@ app.infoEventListener = () => {
 	});
 };
 
+// Results event listener
+app.resultsEventListener = () => {
+	// Select all the results tab buttons
+	const resultsBtns = document.querySelectorAll(".tabs a");
+
+	// Select all the results divs
+	const bugsResults = document.querySelector(".bugsResults");
+	const fishResults = document.querySelector(".fishResults");
+	const seaCreatureResults = document.querySelector(".seaCreatureResults");
+
+	// For each of the results buttons, add an event listener
+	resultsBtns.forEach((button) => {
+		// Whenever a button is pressed execute the following instructions
+		button.addEventListener("click", function (e) {
+			// Remove active results from each of the results tabs
+			e.preventDefault();
+			bugsResults.classList.remove("activeResultsTab");
+			fishResults.classList.remove("activeResultsTab");
+			seaCreatureResults.classList.remove("activeResultsTab");
+
+			// Add the active result to the tab for which the button was clicked
+			if (this.classList.contains("viewBugsBtn")) {
+				bugsResults.classList.add("activeResultsTab");
+			} else if (this.classList.contains("viewFishBtn")) {
+				fishResults.classList.add("activeResultsTab");
+			} else if (this.classList.contains("viewSeaCreaturesBtn")) {
+				seaCreatureResults.classList.add("activeResultsTab");
+				console.log(seaCreatureResults);
+			}
+		});
+	});
+};
+
 // Get information from the API
 app.getData = () => {
+	// Rewrite this with async await and use catches?
 	// Fetch method for bugs
-	fetch(`${app.apiUrl}/bugs`)
-		.then(function (response) {
-			return response.json();
-		})
-		.then(function (jsonResponse) {
-			console.log(jsonResponse);
-			// Constructor to build out li elements
-		});
-
-	// Fetch method for fish
-	fetch(`${app.apiUrl}/fish`)
-		.then(function (response) {
-			return response.json();
-		})
-		.then(function (jsonResponse) {
-			console.log(jsonResponse);
-		});
-
-	// Fetch method for sea creatures
-	fetch(`${app.apiUrl}/sea`)
-		.then(function (response) {
-			return response.json();
-		})
-		.then(function (jsonResponse) {
-			console.log(jsonResponse);
-		});
+	// fetch(`${app.apiUrl}/bugs`)
+	// 	.then(function (response) {
+	// 		return response.json();
+	// 	})
+	// 	.then(function (jsonResponse) {
+	// 		console.log(jsonResponse);
+	// 		// Constructor to build out li elements
+	// 	});
+	// // Fetch method for fish
+	// fetch(`${app.apiUrl}/fish`)
+	// 	.then(function (response) {
+	// 		return response.json();
+	// 	})
+	// 	.then(function (jsonResponse) {
+	// 		console.log(jsonResponse);
+	// 	});
+	// // Fetch method for sea creatures
+	// fetch(`${app.apiUrl}/sea`)
+	// 	.then(function (response) {
+	// 		return response.json();
+	// 	})
+	// 	.then(function (jsonResponse) {
+	// 		console.log(jsonResponse);
+	// 	});
+	// Set the bugs tab to be selected by default
+	const bugsResults = document.querySelector(".bugsResults");
+	bugsResults.classList.add("activeResultsTab");
 };
 
 // Initialize app
 app.init = () => {
 	app.infoEventListener();
 	app.getFormResults();
-	// app.getData();
+	app.getData();
+	app.resultsEventListener();
 };
 
 // Start app
