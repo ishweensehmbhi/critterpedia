@@ -69,3 +69,10 @@
 		}
 	}
 }
+
+// Only enable smooth scrolling if user does not have reduced motion preferences!
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}

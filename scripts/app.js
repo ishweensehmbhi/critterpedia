@@ -37,12 +37,27 @@ app.infoEventListener = () => {
 	const popup = document.querySelector(".popup");
 	const closeBtn = document.querySelector(".closeButton");
 
+	// Select the back-to-top button
+	const scrollToTop = document.querySelector(".backToTop");
+
+	// When the user has scrolled past 50px from the top, show the button. Otherwise, button should be hidden.
+	window.onscroll = function () {
+		if (
+			document.body.scrollTop > 20 ||
+			document.documentElement.scrollTop > 20
+		) {
+			scrollToTop.style.display = "block";
+		} else {
+			scrollToTop.style.display = "none";
+		}
+	};
+
 	// When info btn is clicked, show popup
 	infoBtn.addEventListener("click", function () {
 		popup.style.display = "block";
 	});
-	// When span is clicked, close popup
 
+	// When span is clicked, close popup
 	closeBtn.addEventListener("click", function () {
 		popup.style.display = "none";
 	});
@@ -141,6 +156,7 @@ app.getData = (hemisphere, month) => {
 		);
 		console.log(matchedSeaCreatureArray);
 		console.log(matchedBugsArray);
+		// Call the display info method for each array
 		app.displayInfo(matchedBugsArray, "bugs");
 		app.displayInfo(matchedFishArray, "fish");
 		app.displayInfo(matchedSeaCreatureArray, "seaCreature");
@@ -149,13 +165,20 @@ app.getData = (hemisphere, month) => {
 	bugsResults.classList.add("activeResultsTab");
 };
 
-// display specified info from each filtered creature array
+// Display specified info from each filtered creature array
 app.displayInfo = (matchedArray, critterType) => {
+	// Select the corresponding ul element that the critter list elements will be appended to
 	const ulElement = document.querySelector(`.${critterType}ResultList`);
+
+	// Go through the critter array and generate a list element
 	matchedArray.forEach((critter) => {
 		const critterName = critter.name["name-USen"];
 		const critterIcon = critter["icon_uri"];
 		const critterFact = critter["museum-phrase"];
+		let critterTime = critter.availability.time;
+		if (critter.availability.isAllDay) {
+			critterTime = "all day!";
+		}
 		let primaryAttribute = "";
 		let primaryValue = "";
 		let secondaryAttribute = "";
@@ -172,12 +195,14 @@ app.displayInfo = (matchedArray, critterType) => {
 			secondaryValue = critter.shadow;
 		}
 
-		// create html elements to add to page
+		// Create html elements to add to page
 		const newCritter = document.createElement("li");
 		newCritter.classList.add("itemCard");
 		newCritter.innerHTML = `
 			<h3>${critterName}</h3>
 			<img src="${critterIcon}" alt="animated icon of ${critterName}"></img>
+			<p class="itemSubheading">time</p>
+			<p class="itemProperty">${critterTime}</p>
 			<p class="itemSubheading">${primaryAttribute}</p>
 			<p class="itemProperty">${primaryValue}</p>
 			<p class="itemSubheading">${secondaryAttribute}</p>
