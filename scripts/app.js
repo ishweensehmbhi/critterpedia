@@ -22,7 +22,9 @@ app.getFormResults = () => {
 			"input[name=hemisphere]:checked"
 		).value;
 		// Get user's selected month
-		const month = document.querySelector("option:checked").value;
+		const month = parseInt(
+			document.querySelector("option:checked").value
+		);
 
 		// Make API call when user submits form info
 		app.getData(hemisphere, month);
@@ -107,34 +109,14 @@ app.getData = (hemisphere, month) => {
 		const fishArray = Object.values(creatureData[1]);
 		const seaCreatureArray = Object.values(creatureData[2]);
 
-		// Filter by hemisphere and month
-		const matchedBugsArray = bugsArray.filter((bug) => {
-			// if availability matches hemisphere and month, return to the matched bugs array
-			// first, check for hemisphere
-			if (hemisphere == "northern") {
-				// next, check if the northern hemisphere array contains specified month
-				if (
-					bug.availability["month-array-northern"].includes(
-						month
-					)
-				) {
-					return bug;
-				}
-			} else if (hemisphere == "southern") {
-				// next, check if the southern hemisphere array contains specified month
-
-				if (
-					bug.availability["month-array-northern"].includes(
-						month
-					)
-				) {
-					return bug;
-				}
-			}
-		});
-
-		console.log(bugsArray);
-		console.log(matchedBugsArray);
+		// Check if specified month exists in respective hemisphere array
+		const matchedBugsArray = bugsArray.filter(
+			(bug) =>
+				// check if corresponding hemisphere availability array includes chosen month
+				bug.availability[`month-array-${hemisphere}`].includes(
+					month
+				) == true
+		);
 
 		// Get all of the bug info
 		/*const bugName = bug.name["name-USen"];
