@@ -487,6 +487,16 @@ nav .homeLink:hover, nav .homeLink:focus {
 nav .leafIcon {
   margin-left: 2%;
 }
+nav .infoLink {
+  color: #f8f8f0;
+  -webkit-transition: color 0.6s;
+  transition: color 0.6s;
+}
+nav .infoLink:hover, nav .infoLink:focus {
+  color: #f8d36c;
+  -webkit-transition: color 0.6s;
+  transition: color 0.6s;
+}
 
 h1 {
   display: -webkit-box;
