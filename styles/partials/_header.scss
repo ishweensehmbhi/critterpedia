@@ -33,15 +33,6 @@ nav {
 	.leafIcon {
 		margin-left: 2%;
 	}
-	.infoLink {
-		color: $contentBackground;
-		transition: color 0.6s;
-		&:hover,
-		&:focus {
-			color: $nookYellow;
-			transition: color 0.6s;
-		}
-	}
 }
 h1 {
 	display: flex;
