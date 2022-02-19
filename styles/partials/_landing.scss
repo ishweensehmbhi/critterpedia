@@ -12,7 +12,7 @@
 		}
 	}
 
-	form {
+	.greetingFormContainer {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -26,6 +26,39 @@
 		background-color: $contentBackground;
 	}
 
+	.greeting {
+		margin: 0 auto;
+		background-color: $contentBackground;
+		hr {
+			border: 0;
+			height: 2px;
+			background-image: linear-gradient(
+				to right,
+				rgba($primaryLight, 0),
+				rgba($primaryLight, 0.75),
+				rgba($primaryLight, 0)
+			);
+			margin: 5% 0;
+		}
+	}
+
+	.greetingCopy {
+		margin: 5% 0%;
+	}
+
+	form {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-self: center;
+
+		fieldset {
+			border: none;
+			padding: 0;
+		}
+	}
+
 	.hemisphereContainer {
 		display: flex;
 		flex-direction: row;
@@ -37,9 +70,8 @@
 		}
 	}
 	select {
-		width: 35%;
 		margin: 2.5% auto;
-		padding: 2.5%;
+		padding: 3.5%;
 		text-align: center;
 		border-radius: 10px;
 		border: 2px solid $contentBackground;
@@ -58,10 +90,8 @@
 button {
 	border: none;
 	border-radius: 10px;
-	margin: 2.5% auto;
-	padding: 2.5%;
-	margin-top: 2.5%;
-	width: 55%;
+	margin: 3.5% auto 0%;
+	padding: 4.5% 15%;
 	background-color: $extra;
 	color: $contentBackground;
 	transition: background-color 0.5s;

@@ -475,7 +475,7 @@ h1 {
 .landingContent .blathersContainer img {
   border-radius: 50%;
 }
-.landingContent form {
+.landingContent .greetingFormContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -488,6 +488,30 @@ h1 {
   margin: 2.5% 0;
   background-color: #f8f8f0;
 }
+.landingContent .greeting {
+  margin: 0 auto;
+  background-color: #f8f8f0;
+}
+.landingContent .greeting hr {
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(248, 211, 108, 0), rgba(248, 211, 108, 0.75), rgba(248, 211, 108, 0));
+  margin: 5% 0;
+}
+.landingContent .greetingCopy {
+  margin: 5% 0%;
+}
+.landingContent form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+.landingContent form fieldset {
+  border: none;
+  padding: 0;
+}
 .landingContent .hemisphereContainer {
   display: flex;
   flex-direction: row;
@@ -499,9 +523,8 @@ h1 {
   margin: 2.5% 0;
 }
 .landingContent select {
-  width: 35%;
   margin: 2.5% auto;
-  padding: 2.5%;
+  padding: 3.5%;
   text-align: center;
   border-radius: 10px;
   border: 2px solid #f8f8f0;
@@ -518,10 +541,8 @@ h1 {
 button {
   border: none;
   border-radius: 10px;
-  margin: 2.5% auto;
-  padding: 2.5%;
-  margin-top: 2.5%;
-  width: 55%;
+  margin: 3.5% auto 0%;
+  padding: 4.5% 15%;
   background-color: #06a7bf;
   color: #f8f8f0;
   transition: background-color 0.5s;
@@ -709,7 +730,7 @@ label {
   .landingContent {
     margin-top: 20%;
   }
-  .landingContent form {
+  .landingContent .greetingFormContainer {
     width: 90%;
   }
   .landingContent select,
@@ -747,7 +768,7 @@ label {
   }
 }
 @media (max-width: 380px) {
-  .landingContent form {
+  .landingContent .greetingFormContainer {
     width: 100%;
   }
   .landingContent .hemisphereContainer {

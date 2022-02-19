@@ -41,7 +41,7 @@
 @media (max-width: 800px) {
 	.landingContent {
 		margin-top: 20%;
-		form {
+		.greetingFormContainer {
 			width: 90%;
 		}
 		select,
@@ -83,7 +83,7 @@
 
 @media (max-width: 380px) {
 	.landingContent {
-		form {
+		.greetingFormContainer {
 			width: 100%;
 		}
 		.hemisphereContainer {
