@@ -34,9 +34,9 @@
 			height: 2px;
 			background-image: linear-gradient(
 				to right,
-				rgba($primaryLight, 0),
-				rgba($primaryLight, 0.75),
-				rgba($primaryLight, 0)
+				rgba($nookYellow, 0),
+				rgba($nookYellow, 0.75),
+				rgba($nookYellow, 0)
 			);
 			margin: 5% 0;
 		}
@@ -81,8 +81,8 @@
 		color: $contentBackground;
 		&:hover,
 		&:focus {
-			background-color: $quaternaryLight;
-			border: 2px solid $quaternary;
+			background-color: $brewstersLatte;
+			border: 2px solid $blathersBrown;
 		}
 	}
 }
@@ -92,7 +92,7 @@ button {
 	border-radius: 10px;
 	margin: 3.5% auto 0%;
 	padding: 4.5% 15%;
-	background-color: $extra;
+	background-color: $tropicalTeal;
 	color: $contentBackground;
 	transition: background-color 0.5s;
 	cursor: pointer;

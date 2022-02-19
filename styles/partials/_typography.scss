@@ -1,13 +1,14 @@
 h1,
 h2 {
 	font-family: $headingFont;
+	letter-spacing: 2px;
 }
 
 h3,
 p,
 label {
 	font-family: $bodyFont;
-	color: $quaternaryLight;
+	color: $blathersBrown;
 	font-size: $baseFontSize;
 }
 
@@ -15,13 +16,15 @@ h1 {
 	color: $contentBackground;
 	font-size: 2rem;
 	span {
-		color: $primaryLight;
+		color: $nookYellow;
 	}
 }
 
 h3 {
+	font-family: $headingFont;
+	letter-spacing: 2px;
 	font-size: 1.2rem;
-	color: $quaternary;
+	color: $brewstersCoffee;
 	padding: 2.5% 0;
 }
 
@@ -31,8 +34,13 @@ body {
 
 a {
 	text-decoration: none;
-	color: $extra;
+	color: $tropicalTeal;
 	font-weight: bold;
+	transition: all 0.5s;
+	&:hover,
+	&:focus {
+		color: $islandCoral;
+	}
 }
 
 .results {
@@ -46,8 +54,7 @@ a {
 		line-height: 30px;
 		font-size: 1rem;
 	}
-	h3,
-	p {
+	h3 {
 		color: $islandCoral;
 	}
 	.itemSubheading {
@@ -69,39 +76,13 @@ footer .smallFooterCopy {
 	letter-spacing: 1px;
 	color: $contentBackground;
 	a {
-		color: $contentBackground;
-		transition: all 0.5s;
+		display: inline-block;
+		color: $nookYellow;
+		transition: transform 0.5s;
 		font-weight: bolder;
 		&:hover,
 		&:focus {
-			color: rgba($black, 0.5);
-			transition: all 0.5s;
+			transform: translateY(-10px);
 		}
 	}
 }
-
-// .popup {
-// 	h2 {
-// 		text-transform: uppercase;
-// 	}
-// 	p {
-// 		line-height: 30px;
-// 	}
-// 	.creditsText {
-// 		text-transform: uppercase;
-// 		font-weight: bold;
-// 	}
-// 	.smallFooterCopy,
-// 	.creditsText,
-// 	li {
-// 		font-size: 0.8rem;
-// 		line-height: 25px;
-// 		color: $grey;
-// 	}
-// 	i {
-// 		color: $extra;
-// 	}
-// 	.closeButton {
-// 		transform: scale(200%);
-// 	}
-// }

@@ -43,7 +43,7 @@ html {
 }
 
 body {
-	color: $quaternary;
+	color: $brewstersCoffee;
 	background-image: url("../assets/wave_bg.jpeg");
 }
 
@@ -68,7 +68,7 @@ img {
 }
 
 footer {
-	background-color: $extra;
+	background-color: $tropicalTeal;
 	text-align: center;
 	padding: 2.5% 0;
 	width: 100%;
@@ -97,10 +97,3 @@ footer {
 		opacity: 1;
 	}
 }
-
-// nav {
-// 	a:hover,
-// 	a:focus {
-// 		border: 1px dotted black;
-// 	}
-// }
