@@ -12,7 +12,7 @@ label {
 }
 
 h1 {
-	color: $tertiary;
+	color: $contentBackground;
 	font-size: 2rem;
 	span {
 		color: $primaryLight;
@@ -48,7 +48,7 @@ a {
 	}
 	h3,
 	p {
-		color: $celesteRed;
+		color: $islandCoral;
 	}
 	.itemSubheading {
 		font-weight: bold;
@@ -63,28 +63,45 @@ a {
 	}
 }
 
-.popup {
-	h2 {
-		text-transform: uppercase;
-	}
-	p {
-		line-height: 30px;
-	}
-	.creditsText {
-		text-transform: uppercase;
-		font-weight: bold;
-	}
-	.smallModalCopy,
-	.creditsText,
-	li {
-		font-size: 0.8rem;
-		line-height: 25px;
-		color: $grey;
-	}
-	i {
-		color: $extra;
-	}
-	.closeButton {
-		transform: scale(200%);
+footer .smallFooterCopy {
+	font-size: 1rem;
+	line-height: 25px;
+	letter-spacing: 1px;
+	color: $contentBackground;
+	a {
+		color: $contentBackground;
+		transition: all 0.5s;
+		font-weight: bolder;
+		&:hover,
+		&:focus {
+			color: rgba($black, 0.5);
+			transition: all 0.5s;
+		}
 	}
 }
+
+// .popup {
+// 	h2 {
+// 		text-transform: uppercase;
+// 	}
+// 	p {
+// 		line-height: 30px;
+// 	}
+// 	.creditsText {
+// 		text-transform: uppercase;
+// 		font-weight: bold;
+// 	}
+// 	.smallFooterCopy,
+// 	.creditsText,
+// 	li {
+// 		font-size: 0.8rem;
+// 		line-height: 25px;
+// 		color: $grey;
+// 	}
+// 	i {
+// 		color: $extra;
+// 	}
+// 	.closeButton {
+// 		transform: scale(200%);
+// 	}
+// }

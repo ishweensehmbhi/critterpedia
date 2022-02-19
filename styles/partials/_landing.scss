@@ -3,7 +3,7 @@
 	flex-direction: column;
 	flex-wrap: wrap;
 	animation: fadeIn 0.75s;
-	margin-top: 100px;
+	margin-top: 15%;
 	.blathersContainer {
 		margin: 0 auto;
 		padding-top: 2.5%;
@@ -42,11 +42,11 @@
 		padding: 2.5%;
 		text-align: center;
 		border-radius: 10px;
-		border: 2px solid $tertiary;
+		border: 2px solid $contentBackground;
 		cursor: pointer;
 		background-color: $blathersBrown;
 		transition: background-color 0.5s;
-		color: $tertiary;
+		color: $contentBackground;
 		&:hover,
 		&:focus {
 			background-color: $quaternaryLight;
@@ -63,11 +63,11 @@ button {
 	margin-top: 2.5%;
 	width: 55%;
 	background-color: $extra;
-	color: $tertiary;
+	color: $contentBackground;
 	transition: background-color 0.5s;
 	cursor: pointer;
 	&:hover,
 	&:focus {
-		background-color: $celesteRed;
+		background-color: $islandCoral;
 	}
 }
