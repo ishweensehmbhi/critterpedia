@@ -39,21 +39,6 @@ app.infoEventListener = () => {
 	const popup = document.querySelector(".popup");
 	const closeBtn = document.querySelector(".closeButton");
 
-	// Select the back-to-top button
-	const scrollToTop = document.querySelector(".backToTop");
-
-	// When the user has scrolled past 50px from the top, show the button. Otherwise, button should be hidden.
-	window.onscroll = function () {
-		if (
-			document.body.scrollTop > 20 ||
-			document.documentElement.scrollTop > 20
-		) {
-			scrollToTop.style.display = "block";
-		} else {
-			scrollToTop.style.display = "none";
-		}
-	};
-
 	// When info btn is clicked, show popup
 	infoBtn.addEventListener("click", function () {
 		popup.style.display = "block";
