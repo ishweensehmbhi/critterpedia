@@ -434,7 +434,7 @@ header::after {
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 nav .homeLink {
   display: flex;
@@ -550,69 +550,6 @@ button {
 }
 button:hover, button:focus {
   background-color: #eb7373;
-}
-
-.popup {
-  background-color: #000;
-  display: none;
-  position: fixed;
-  z-index: 10;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding-top: 100px;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  -webkit-animation: fadeIn 0.75s;
-          animation: fadeIn 0.75s;
-}
-.popup .popupContent {
-  background-color: #000;
-  margin: 0 auto;
-  padding: 5%;
-  border: 5px solid #cfaf8e;
-  width: 70%;
-  max-width: 1200px;
-  text-align: center;
-  -webkit-animation: fadeIn 0.75s;
-          animation: fadeIn 0.75s;
-  border-radius: 2.5%;
-  position: relative;
-}
-.popup .popupContent img {
-  width: 30%;
-  margin: 3.5% auto;
-}
-.popup .popupContent p {
-  margin: 2%;
-}
-.popup .popupContent a {
-  transition: color 0.5s;
-}
-.popup .popupContent a:hover,
-.popup .popupContent a:focus {
-  color: #eb7373;
-  transition: color 0.5s;
-}
-.popup .popupContent hr {
-  border: 0;
-  height: 2px;
-  background-image: linear-gradient(to right, rgba(6, 167, 191, 0), rgba(6, 167, 191, 0.75), rgba(6, 167, 191, 0));
-  margin: 5% 0;
-}
-.popup .closeButton {
-  position: absolute;
-  right: 5%;
-  top: 5%;
-}
-.popup .closeButton i {
-  transition: color 0.5s;
-}
-.popup .closeButton i:hover,
-.popup .closeButton i:focus {
-  color: #eb7373;
-  cursor: pointer;
-  transition: color 0.5s;
 }
 
 .info {
