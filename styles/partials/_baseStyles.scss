@@ -89,22 +89,6 @@ footer {
 	}
 }
 
-.backToTop,
-.backToTop:visited {
-	display: none;
-	position: fixed;
-	bottom: 50px;
-	left: 50px;
-	color: $celesteRed;
-	opacity: 100%;
-	transform: scale(400%);
-	transition: opacity 0.3s;
-	&:hover {
-		opacity: 50%;
-		transition: opacity 0.3s;
-	}
-}
-
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
