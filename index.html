@@ -38,11 +38,12 @@
 
                     <div class="greetingFormContainer">
                         <div class="greeting">
-                            <h2 class="greetingHeading">Hoo hoot!</h2>
-                            <p class="greetingCopy">This little app helps you find out what creatures you can encounter
+                            <h2 class="greetingHeading">HOO HOOT!</h2>
+                            <p class="greetingCopy">Blathers can help you find out what creatures you can encounter
                                 on
-                                your island given what month of the year you specify and what hemisphere your island is
-                                on. Data is provided by the <a href="https://acnhapi.com/">ACNH API.</a></p>
+                                your island in Animal Crossing: New Horizons! Simply let him know what hemisphere your
+                                island is on and the month. Data is provided by the <a href="https://acnhapi.com/">ACNH
+                                    API.</a></p>
                             <hr>
                         </div>
 
@@ -52,7 +53,7 @@
                                 <div class="hemisphereContainer">
                                     <legend class="sr-only">Select your island's hemisphere</legend>
                                     <div class="northernContainer">
-                                        <input type="radio" name="hemisphere" id="northern" value="northern">
+                                        <input type="radio" name="hemisphere" id="northern" value="northern" required>
                                         <label for="northern" name="hemisphere">Northern</label>
                                     </div> <!-- end of .northernContainer-->
 
@@ -66,8 +67,8 @@
 
                             <h3>Month</h3>
                             <label for="month" class="sr-only">Choose the month</label>
-                            <select name="month" id="month">
-                                <option selected disabled>The month is...</option>
+                            <select name="month" id="month" required>
+                                <option value="" selected disabled>The month is...</option>
                                 <option value="1">January</option>
                                 <option value="2">February</option>
                                 <option value="3">March</option>

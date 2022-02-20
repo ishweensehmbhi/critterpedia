@@ -12,12 +12,12 @@ const app = {};
 
 app.apiUrl = "https://acnhapi.com/v1/";
 
-// Get form results
+// Assign an event listener to the form, get form results from user, process results
 app.getFormResults = () => {
 	const formElement = document.querySelector("form");
 	formElement.addEventListener("submit", function (e) {
 		e.preventDefault();
-		// Get user's selected hemisphere
+		// Get user's selected hemisphere, handled with a "required" attribute by browser
 		const hemisphere = document.querySelector(
 			"input[name=hemisphere]:checked"
 		).value;
@@ -26,16 +26,27 @@ app.getFormResults = () => {
 			document.querySelector("option:checked").value
 		);
 
-		// Make API call when user submits form info
-		app.getData(hemisphere, month);
-		const tabsContainer = document.querySelector(".tabs");
-		tabsContainer.style.display = "flex";
+		// If valid data entered
+		if (hemisphere && month) {
+			// Make API call when user submits correcct form info
+			app.getData(hemisphere, month);
+			const tabsContainer = document.querySelector(".tabs");
+			tabsContainer.style.display = "flex";
+		} else if (!hemisphere || !month) {
+			// Graceful error handling if results are invalid
+			const resultsSection =
+				document.querySelector(".info .wrapper");
+			const errorMessage = document.createElement("h2");
+			errorMessage.innerHTML =
+				"My feathers! Something has gone terribly wrong. Could you please try again?";
+			resultsSection.appendChild(errorMessage);
+		}
 	});
 };
 
-// Get information from the API based on user responses
+// Request information from the API based on user's responses
 app.getData = (hemisphere, month) => {
-	// Clear previous results
+	// Clear previous results or error messages
 	document.querySelector(`.bugsResultList`).innerHTML = "";
 	document.querySelector(`.fishResultList`).innerHTML = "";
 	document.querySelector(`.seaCreatureResultList`).innerHTML = "";
@@ -45,9 +56,7 @@ app.getData = (hemisphere, month) => {
 
 	// Define a function which fetches creature data and parses it into JSON
 	async function getCreatureData(endpoint) {
-		// Make a fetch request
 		const creatureDataRequest = await fetch(`${app.apiUrl}${endpoint}`);
-		// request for a JSON parse
 		const creatureDataJson = await creatureDataRequest.json();
 		return creatureDataJson;
 	}
@@ -59,7 +68,7 @@ app.getData = (hemisphere, month) => {
 
 	// Resolve all promises and work with the returned data
 	Promise.all(creatureDataList).then((creatureData) => {
-		// Now we are returned an array of objects and we must filter out which ones to display
+		// Now we are returned an array of objects and we must filter out which creatures to display
 
 		// For each of the creature-type (bug, fish, sea) we will create a separate array so that filtering is easier
 		const bugsArray = Object.values(creatureData[0]);
@@ -92,20 +101,21 @@ app.getData = (hemisphere, month) => {
 					`month-array-${hemisphere}`
 				].includes(month) == true
 		);
-		console.log(matchedSeaCreatureArray);
-		console.log(matchedBugsArray);
+
 		// Call the display info method for each array
 		app.displayInfo(matchedBugsArray, "bugs");
 		app.displayInfo(matchedFishArray, "fish");
 		app.displayInfo(matchedSeaCreatureArray, "seaCreature");
 	});
 
+	// Set default tab to the bugs tab
 	const bugsResults = document.querySelector(".bugsResults");
 	// Change Blathers' mood! He hates bugs!
 	app.blathersIconChange("panic");
 	bugsResults.classList.add("activeResultsTab");
 };
 
+// Change Blathers' mood
 app.blathersIconChange = (mood) => {
 	const blathersIcon = document.querySelector(".blathersContainer img");
 	if (mood == "panic") {
