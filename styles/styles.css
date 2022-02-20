@@ -641,21 +641,27 @@ button:hover, button:focus {
 .tabs a {
   padding: 2% 2%;
   margin: 0% 5%;
-  color: #c48d3f;
+  color: #f8f8f0;
   background-color: #06a7bf;
   border-radius: 50%;
   color: white;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .tabs a:hover, .tabs a:focus, .tabs a:active {
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
   background-color: #eb7373;
   cursor: pointer;
-}
-.tabs a i {
-  font-size: 2.5rem;
 }
 
 .results > div {
@@ -777,6 +783,10 @@ label {
   }
 }
 @media (max-width: 600px) {
+  .tabs a {
+    margin: 0 2%;
+  }
+
   .results ul {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -802,6 +812,10 @@ label {
 
   .results ul .itemCard {
     width: 100%;
+  }
+
+  .tabs a {
+    padding: 1%;
   }
 }
 @media (max-width: 380px) {

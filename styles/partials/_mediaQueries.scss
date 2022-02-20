@@ -56,6 +56,9 @@
 }
 
 @media (max-width: 600px) {
+	.tabs a {
+		margin: 0 2%;
+	}
 	.results ul {
 		justify-content: center;
 		.itemCard {
@@ -78,6 +81,9 @@
 	}
 	.results ul .itemCard {
 		width: 100%;
+	}
+	.tabs a {
+		padding: 1%;
 	}
 }
 
