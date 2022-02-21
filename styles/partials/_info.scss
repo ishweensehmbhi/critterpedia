@@ -33,6 +33,9 @@
 			cursor: pointer;
 		}
 	}
+	.activeButton {
+		background-color: $islandCoral;
+	}
 }
 
 // Style the results divs and the individual item cards inside

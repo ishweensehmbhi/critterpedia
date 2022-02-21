@@ -630,6 +630,9 @@ button:focus {
 	background-color: #eb7373;
 	cursor: pointer;
 }
+.tabs .activeButton {
+	background-color: #eb7373;
+}
 
 .results > div {
 	display: none;

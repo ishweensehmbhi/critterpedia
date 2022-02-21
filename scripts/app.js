@@ -113,6 +113,7 @@ app.blathersIconChange = (mood) => {
 
 // Display specified info from each filtered creature array
 app.displayInfo = (matchedArray, critterType) => {
+	app.blathersIconChange("panic");
 	// Select the corresponding ul element that the critter list elements will be appended to
 	const ulElement = document.querySelector(`.${critterType}ResultList`);
 
@@ -168,6 +169,10 @@ app.resultsEventListener = () => {
 	const fishResults = document.querySelector(".fishResults");
 	const seaCreatureResults = document.querySelector(".seaCreatureResults");
 
+	const bugsBtn = document.querySelector(".viewBugsBtn");
+	const fishBtn = document.querySelector(".viewFishBtn");
+	const seaCreaturesBtn = document.querySelector(".viewSeaCreaturesBtn");
+
 	// For each of the results buttons, add an event listener
 	resultsBtns.forEach((button) => {
 		// Whenever a button is pressed execute the following instructions
@@ -180,14 +185,39 @@ app.resultsEventListener = () => {
 
 			// Add the active result to the tab for which the button was clicked
 			if (this.classList.contains("viewBugsBtn")) {
+				// change active button
+				this.classList.add("activeButton");
+				fishBtn.classList.remove("activeButton");
+				seaCreaturesBtn.classList.remove("activeButton");
+
+				// change new active tab
 				bugsResults.classList.add("activeResultsTab");
-				// Change blathers image to blathers panic because he hates bugs
+
+				// change blathers icon
 				app.blathersIconChange("panic");
+
+				// Change the colours of the other two buttons
 			} else if (this.classList.contains("viewFishBtn")) {
+				// change active button
+				this.classList.add("activeButton");
+				bugsBtn.classList.remove("activeButton");
+				seaCreaturesBtn.classList.remove("activeButton");
+
+				// change new active tab
 				fishResults.classList.add("activeResultsTab");
+
+				// change blathers icon
 				app.blathersIconChange("chill");
 			} else if (this.classList.contains("viewSeaCreaturesBtn")) {
+				// change active button
+				this.classList.add("activeButton");
+				fishBtn.classList.remove("activeButton");
+				bugsBtn.classList.remove("activeButton");
+
+				// change new active tab
 				seaCreatureResults.classList.add("activeResultsTab");
+
+				// change blathers icon
 				app.blathersIconChange("chill");
 			}
 		});
