@@ -618,7 +618,7 @@ button:focus {
 	background-color: #06a7bf;
 	border-radius: 50%;
 	color: white;
-	transition: background-color 0.5s;
+	transition: all 0.5s;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -626,12 +626,14 @@ button:focus {
 .tabs a:hover,
 .tabs a:focus,
 .tabs a:active {
-	transition: background-color 0.5s;
+	transition: all 0.5s;
 	background-color: #eb7373;
 	cursor: pointer;
+	transform: scale(1.2);
 }
 .tabs .activeButton {
 	background-color: #eb7373;
+	transform: scale(1.2);
 }
 
 .results > div {
