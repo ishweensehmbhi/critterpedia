@@ -1,13 +1,3 @@
-// Record user's input on submit (event listener)
-// Create a URL object with specified params (e.g. query fish, query bugs, query sea creatures, etc.)
-// Fetch object, parse into JSON, this will return an object of objects (item)
-// Then use a for-each loop to iterate over each item and its properties, save all of these individual objects to an array
-// Use a filter method to take only the objects which have an availability (month-array-northern and month-array-southern) matching the user's specified month
-// Create a "li" element to display each "item" as a card using the following properties:
-// item.title, item.museum_fact, item.location, etc...
-// Add the information above to the li
-// Append the li to the end of the ul which will host each of the fish, sea creatures, and bug sections.
-
 const app = {};
 
 app.apiUrl = "https://acnhapi.com/v1/";
@@ -31,7 +21,14 @@ app.getFormResults = () => {
 			// Make API call when user submits correcct form info
 			app.getData(hemisphere, month);
 			const tabsContainer = document.querySelector(".tabs");
+			// Show tabs buttons
 			tabsContainer.style.display = "flex";
+			// Clear previous results or error messages on all results list elements
+			const resultsLists = document.querySelectorAll("ul");
+			resultsLists.forEach((list) => {
+				list.innerHTML = "";
+				list.classList.remove("activeResultsTab");
+			});
 		} else if (!hemisphere || !month) {
 			// Graceful error handling if results are invalid
 			const resultsSection =
@@ -46,11 +43,6 @@ app.getFormResults = () => {
 
 // Request information from the API based on user's responses
 app.getData = (hemisphere, month) => {
-	// Clear previous results or error messages
-	document.querySelector(`.bugsResultList`).innerHTML = "";
-	document.querySelector(`.fishResultList`).innerHTML = "";
-	document.querySelector(`.seaCreatureResultList`).innerHTML = "";
-
 	// Create an array of endpoints
 	const endpointValues = ["bugs/", "fish/", "sea/"];
 
@@ -107,12 +99,6 @@ app.getData = (hemisphere, month) => {
 		app.displayInfo(matchedFishArray, "fish");
 		app.displayInfo(matchedSeaCreatureArray, "seaCreature");
 	});
-
-	// Set default tab to the bugs tab
-	const bugsResults = document.querySelector(".bugsResults");
-	// Change Blathers' mood! He hates bugs!
-	app.blathersIconChange("panic");
-	bugsResults.classList.add("activeResultsTab");
 };
 
 // Change Blathers' mood
@@ -123,45 +109,6 @@ app.blathersIconChange = (mood) => {
 	} else if (mood == "chill") {
 		blathersIcon.src = "./assets/blathers_icon.png";
 	}
-};
-
-// Results event listener
-app.resultsEventListener = () => {
-	// Select all the results tab buttons
-	const resultsBtns = document.querySelectorAll(".tabs a");
-
-	// Select the Blathers icon
-	const blathersIcon = document.querySelector(".blathersContainer img");
-
-	// Select all the results divs
-	const bugsResults = document.querySelector(".bugsResults");
-	const fishResults = document.querySelector(".fishResults");
-	const seaCreatureResults = document.querySelector(".seaCreatureResults");
-
-	// For each of the results buttons, add an event listener
-	resultsBtns.forEach((button) => {
-		// Whenever a button is pressed execute the following instructions
-		button.addEventListener("click", function (e) {
-			// Remove active results from each of the results tabs
-			e.preventDefault();
-			bugsResults.classList.remove("activeResultsTab");
-			fishResults.classList.remove("activeResultsTab");
-			seaCreatureResults.classList.remove("activeResultsTab");
-
-			// Add the active result to the tab for which the button was clicked
-			if (this.classList.contains("viewBugsBtn")) {
-				bugsResults.classList.add("activeResultsTab");
-				// Change blathers image to blathers panic because he hates bugs
-				app.blathersIconChange("panic");
-			} else if (this.classList.contains("viewFishBtn")) {
-				fishResults.classList.add("activeResultsTab");
-				app.blathersIconChange("chill");
-			} else if (this.classList.contains("viewSeaCreaturesBtn")) {
-				seaCreatureResults.classList.add("activeResultsTab");
-				app.blathersIconChange("chill");
-			}
-		});
-	});
 };
 
 // Display specified info from each filtered creature array
@@ -208,6 +155,42 @@ app.displayInfo = (matchedArray, critterType) => {
 			<p class="itemProperty">${secondaryValue}</p>
 		`;
 		ulElement.appendChild(newCritter);
+	});
+};
+
+// Results event listener
+app.resultsEventListener = () => {
+	// Select all the results tab buttons
+	const resultsBtns = document.querySelectorAll(".tabs a");
+
+	// Select all the results divs
+	const bugsResults = document.querySelector(".bugsResults");
+	const fishResults = document.querySelector(".fishResults");
+	const seaCreatureResults = document.querySelector(".seaCreatureResults");
+
+	// For each of the results buttons, add an event listener
+	resultsBtns.forEach((button) => {
+		// Whenever a button is pressed execute the following instructions
+		button.addEventListener("click", function (e) {
+			// Remove active results from each of the results tabs
+			e.preventDefault();
+			bugsResults.classList.remove("activeResultsTab");
+			fishResults.classList.remove("activeResultsTab");
+			seaCreatureResults.classList.remove("activeResultsTab");
+
+			// Add the active result to the tab for which the button was clicked
+			if (this.classList.contains("viewBugsBtn")) {
+				bugsResults.classList.add("activeResultsTab");
+				// Change blathers image to blathers panic because he hates bugs
+				app.blathersIconChange("panic");
+			} else if (this.classList.contains("viewFishBtn")) {
+				fishResults.classList.add("activeResultsTab");
+				app.blathersIconChange("chill");
+			} else if (this.classList.contains("viewSeaCreaturesBtn")) {
+				seaCreatureResults.classList.add("activeResultsTab");
+				app.blathersIconChange("chill");
+			}
+		});
 	});
 };
 
