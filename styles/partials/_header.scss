@@ -5,16 +5,9 @@ header {
 	width: 100%;
 	z-index: 20;
 	&::after {
-		content: "";
-		display: block;
-		background-image: url("../assets/wave.svg");
-		position: absolute;
+		@include beforeAfter("../assets/wave.svg");
 		bottom: -28px;
-		left: 0;
-		width: 100%;
 		height: 30px;
-		z-index: 10;
-		background-repeat: repeat-x;
 		transform: rotateX(-180deg);
 	}
 }

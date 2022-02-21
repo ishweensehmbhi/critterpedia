@@ -7,15 +7,11 @@
 	.blathersContainer {
 		margin: 0 auto;
 		padding-top: 2.5%;
-		img {
-			border-radius: 50%;
-		}
 	}
 
 	.greetingFormContainer {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-self: center;
 		width: 70%;
 		border: 5px solid $accent;
@@ -50,8 +46,6 @@
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-self: center;
 
 		fieldset {
 			border: none;
@@ -90,11 +84,11 @@
 button {
 	border: none;
 	border-radius: 10px;
-	margin: 3.5% auto 0%;
+	margin: 3.5% auto;
 	padding: 4.5% 15%;
 	background-color: $tropicalTeal;
 	color: $contentBackground;
-	transition: background-color 0.5s;
+	transition: all 0.5s;
 	cursor: pointer;
 	&:hover,
 	&:focus {

@@ -45,33 +45,21 @@ a {
 
 .results {
 	h3 {
-		font-family: $headingFont;
+		color: $islandCoral;
 		font-size: 1.4rem;
 		text-transform: uppercase;
+		font-weight: bold;
 	}
 	p {
-		font-family: $bodyFont;
 		line-height: 30px;
-		font-size: 1rem;
-	}
-	h3 {
-		color: $islandCoral;
-	}
-	.itemSubheading {
-		font-weight: bold;
-		font-family: $headingFont;
 	}
 	.itemProperty,
 	.itemSubheading {
 		text-transform: lowercase;
 	}
-	.quote {
-		font-family: $bodyFont;
-	}
 }
 
 footer .smallFooterCopy {
-	font-size: 1rem;
 	line-height: 25px;
 	letter-spacing: 1px;
 	color: $contentBackground;
