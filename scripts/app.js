@@ -30,7 +30,7 @@ app.getFormResults = () => {
 				list.classList.remove("activeResultsTab");
 			});
 		} else if (!hemisphere || !month) {
-			// Graceful error handling if results are invalid
+			// Graceful error handling if there is no browser-level error handling for the form
 			const resultsSection =
 				document.querySelector(".info .wrapper");
 			const errorMessage = document.createElement("h2");
@@ -53,52 +53,62 @@ app.getData = (hemisphere, month) => {
 		return creatureDataJson;
 	}
 
-	// Save all promises to an array
+	// Save all json info to an array
 	const creatureDataList = endpointValues.map((endpoint) => {
 		return getCreatureData(endpoint);
 	});
 
 	// Resolve all promises and work with the returned data
-	Promise.all(creatureDataList).then((creatureData) => {
-		// Now we are returned an array of objects and we must filter out which creatures to display
+	Promise.all(creatureDataList)
+		.then((creatureData) => {
+			// Now we are returned an array of objects and we must filter out which creatures to display
 
-		// For each of the creature-type (bug, fish, sea) we will create a separate array so that filtering is easier
-		const bugsArray = Object.values(creatureData[0]);
-		const fishArray = Object.values(creatureData[1]);
-		const seaCreatureArray = Object.values(creatureData[2]);
+			// For each of the creature-type (bug, fish, sea) we will create a separate array so that filtering is easier
+			const bugsArray = Object.values(creatureData[0]);
+			const fishArray = Object.values(creatureData[1]);
+			const seaCreatureArray = Object.values(creatureData[2]);
 
-		// Check if specified month exists in respective hemisphere array
-		const matchedBugsArray = bugsArray.filter(
-			(bug) =>
-				// check if corresponding hemisphere availability array includes chosen month
-				bug.availability[`month-array-${hemisphere}`].includes(
-					month
-				) == true
-		);
+			// Check if specified month exists in respective hemisphere array
+			const matchedBugsArray = bugsArray.filter(
+				(bug) =>
+					// check if corresponding hemisphere availability array includes chosen month
+					bug.availability[
+						`month-array-${hemisphere}`
+					].includes(month) == true
+			);
 
-		// Check if specified month exists in respective hemisphere array
-		const matchedFishArray = fishArray.filter(
-			(fish) =>
-				// check if corresponding hemisphere availability array includes chosen month
-				fish.availability[`month-array-${hemisphere}`].includes(
-					month
-				) == true
-		);
+			// Check if specified month exists in respective hemisphere array
+			const matchedFishArray = fishArray.filter(
+				(fish) =>
+					// check if corresponding hemisphere availability array includes chosen month
+					fish.availability[
+						`month-array-${hemisphere}`
+					].includes(month) == true
+			);
 
-		// Check if specified month exists in respective hemisphere array
-		const matchedSeaCreatureArray = seaCreatureArray.filter(
-			(seaCreature) =>
-				// check if corresponding hemisphere availability array includes chosen month
-				seaCreature.availability[
-					`month-array-${hemisphere}`
-				].includes(month) == true
-		);
+			// Check if specified month exists in respective hemisphere array
+			const matchedSeaCreatureArray = seaCreatureArray.filter(
+				(seaCreature) =>
+					// check if corresponding hemisphere availability array includes chosen month
+					seaCreature.availability[
+						`month-array-${hemisphere}`
+					].includes(month) == true
+			);
 
-		// Call the display info method for each array
-		app.displayInfo(matchedBugsArray, "bugs");
-		app.displayInfo(matchedFishArray, "fish");
-		app.displayInfo(matchedSeaCreatureArray, "seaCreature");
-	});
+			// Call the display info method for each array
+			app.displayInfo(matchedBugsArray, "bugs");
+			app.displayInfo(matchedFishArray, "fish");
+			app.displayInfo(matchedSeaCreatureArray, "seaCreature");
+		})
+		.catch((error) => {
+			// Catch in case API is down/endpoint cannot be reached
+			let newErrorMessage = document.createElement("p");
+			newErrorMessage.classList.add("errorMessage");
+			newErrorMessage.textContent = `My feathers! I couldn't find you any information. Could you please try again later?`;
+			const resultsDiv = document.querySelector(".results");
+			resultsDiv.innerHTML = "";
+			resultsDiv.appendChild(newErrorMessage);
+		});
 };
 
 // Change Blathers' mood
@@ -113,7 +123,6 @@ app.blathersIconChange = (mood) => {
 
 // Display specified info from each filtered creature array
 app.displayInfo = (matchedArray, critterType) => {
-	app.blathersIconChange("panic");
 	// Select the corresponding ul element that the critter list elements will be appended to
 	const ulElement = document.querySelector(`.${critterType}ResultList`);
 
@@ -121,7 +130,6 @@ app.displayInfo = (matchedArray, critterType) => {
 	matchedArray.forEach((critter) => {
 		const critterName = critter.name["name-USen"];
 		const critterIcon = critter["icon_uri"];
-		const critterFact = critter["museum-phrase"];
 		let critterTime = critter.availability.time;
 		if (critter.availability.isAllDay) {
 			critterTime = "all day!";
@@ -186,9 +194,11 @@ app.resultsEventListener = () => {
 			// Add the active result to the tab for which the button was clicked
 			if (this.classList.contains("viewBugsBtn")) {
 				// change active button
-				this.classList.add("activeButton");
+
 				fishBtn.classList.remove("activeButton");
 				seaCreaturesBtn.classList.remove("activeButton");
+
+				this.classList.add("activeButton");
 
 				// change new active tab
 				bugsResults.classList.add("activeResultsTab");

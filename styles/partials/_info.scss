@@ -77,3 +77,12 @@
 div.activeResultsTab {
 	display: block;
 }
+
+.errorMessage {
+	text-align: center;
+	background-color: $contentBackground;
+	margin-top: 3%;
+	padding: 2%;
+	border-radius: 3%;
+	border: 3px solid $accent;
+}

@@ -661,7 +661,7 @@ button:hover, button:focus {
           animation: fadeIn 0.75s;
 }
 .results ul .itemCard {
-  width: calc((100% / 3) - 1.5%);
+  width: 31.8333333333%;
   margin: 1.5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -696,6 +696,15 @@ div.activeResultsTab {
   display: block;
 }
 
+.errorMessage {
+  text-align: center;
+  background-color: #f8f8f0;
+  margin-top: 3%;
+  padding: 2%;
+  border-radius: 3%;
+  border: 3px solid #bbe6e4;
+}
+
 @media (min-width: 2000px) {
   header .wrapper {
     max-width: 2000px;
@@ -714,7 +723,7 @@ label {
             justify-content: space-between;
   }
   .results ul .itemCard {
-    width: calc((100% / 5) - 1.5%);
+    width: 18.5%;
   }
 
   .info .wrapper {
@@ -740,7 +749,7 @@ label {
             justify-content: space-between;
   }
   .results ul .itemCard {
-    width: calc((100% / 2) - 3%);
+    width: 47%;
   }
 }
 @media (max-width: 800px) {
