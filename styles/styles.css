@@ -695,7 +695,7 @@ button:hover, button:focus {
 .results ul .itemCard .itemProperty {
   margin-bottom: 5%;
 }
-.results ul .itemCard:hover {
+.results ul .itemCard:hover, .results ul .itemCard:focus {
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;

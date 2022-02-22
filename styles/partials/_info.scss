@@ -70,7 +70,8 @@
 			.itemProperty {
 				margin-bottom: 5%;
 			}
-			&:hover {
+			&:hover,
+			&:focus {
 				transition: transform 0.3s;
 				transform: rotate(2deg);
 			}
