@@ -63,11 +63,16 @@
 			padding: 4% 2%;
 			animation: fadeIn 0.75s;
 			background-color: $contentBackground;
+			transition: transform 0.3s;
 			img {
 				filter: drop-shadow(5px 5px 5px $grey);
 			}
 			.itemProperty {
 				margin-bottom: 5%;
+			}
+			&:hover {
+				transition: transform 0.3s;
+				transform: rotate(2deg);
 			}
 		}
 	}

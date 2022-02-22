@@ -683,6 +683,10 @@ button:hover, button:focus {
   -webkit-animation: fadeIn 0.75s;
           animation: fadeIn 0.75s;
   background-color: #f8f8f0;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 .results ul .itemCard img {
   -webkit-filter: drop-shadow(5px 5px 5px #ccc);
@@ -690,6 +694,14 @@ button:hover, button:focus {
 }
 .results ul .itemCard .itemProperty {
   margin-bottom: 5%;
+}
+.results ul .itemCard:hover {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: rotate(2deg);
+          transform: rotate(2deg);
 }
 
 div.activeResultsTab {

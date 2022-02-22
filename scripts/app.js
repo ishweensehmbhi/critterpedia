@@ -29,6 +29,8 @@ app.getFormResults = () => {
 				list.innerHTML = "";
 				list.classList.remove("activeResultsTab");
 			});
+			const resultsContent = document.getElementById("info");
+			resultsContent.scrollIntoView();
 		} else if (!hemisphere || !month) {
 			// Graceful error handling if there is no browser-level error handling for the form
 			const resultsSection =
